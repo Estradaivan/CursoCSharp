@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ivan Estrada\\source\\repos\\CursoCSharp\\PrimeraEntrega\\PrimeraEntrega.csproj": {}
+    "C:\\Users\\Ivan Estrada\\source\\repos\\CursoCsharp\\PrimeraEntrega\\PrimeraEntrega.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ivan Estrada\\source\\repos\\CursoCSharp\\PrimeraEntrega\\PrimeraEntrega.csproj": {
+    "C:\\Users\\Ivan Estrada\\source\\repos\\CursoCsharp\\PrimeraEntrega\\PrimeraEntrega.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ivan Estrada\\source\\repos\\CursoCSharp\\PrimeraEntrega\\PrimeraEntrega.csproj",
+        "projectUniqueName": "C:\\Users\\Ivan Estrada\\source\\repos\\CursoCsharp\\PrimeraEntrega\\PrimeraEntrega.csproj",
         "projectName": "PrimeraEntrega",
-        "projectPath": "C:\\Users\\Ivan Estrada\\source\\repos\\CursoCSharp\\PrimeraEntrega\\PrimeraEntrega.csproj",
+        "projectPath": "C:\\Users\\Ivan Estrada\\source\\repos\\CursoCsharp\\PrimeraEntrega\\PrimeraEntrega.csproj",
         "packagesPath": "C:\\Users\\Ivan Estrada\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ivan Estrada\\source\\repos\\CursoCSharp\\PrimeraEntrega\\obj\\",
+        "outputPath": "C:\\Users\\Ivan Estrada\\source\\repos\\CursoCsharp\\PrimeraEntrega\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ivan Estrada\\AppData\\Roaming\\NuGet\\NuGet.Config",
