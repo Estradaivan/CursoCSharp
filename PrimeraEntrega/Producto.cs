@@ -28,7 +28,7 @@ namespace PrimeraEntrega
         public Producto()
         {
             id = 0;
-            descripcion = "aa";
+            descripcion = "";
             costo = 0;
             precioVenta = 0;
             stock = 0;
