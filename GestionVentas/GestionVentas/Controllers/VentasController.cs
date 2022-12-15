@@ -25,22 +25,81 @@ namespace GestionVentas.Controllers
             }
         }
 
-        [HttpPost]
-        public IActionResult Post()
+        [HttpGet("{id}")]
+        public ActionResult<Venta> Get(long id)
         {
-            return Ok();
+            try
+            {
+                Venta? venta = repository.obtenerVenta(id);
+                if (venta != null)
+                {
+                    return Ok(venta);
+                }
+                else
+                {
+                    return NotFound("La venta no fue encontrada");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
         }
 
-        [HttpPut]
-        public IActionResult Put()
+        [HttpPost]
+        public ActionResult Post([FromBody] Venta venta)
         {
-            return Ok();
+            try
+            {
+                Venta ventaCreado = repository.crearVenta(venta);
+                return StatusCode(StatusCodes.Status201Created, ventaCreado);
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
         }
 
         [HttpDelete]
-        public IActionResult Delete()
+        public ActionResult Delete([FromBody] int id)
         {
-            return Ok();
+            try
+            {
+                bool seElimino = repository.eliminarVenta(id);
+                if (seElimino)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult<Producto> Put(long id, [FromBody] Venta ventaAActualizar)
+        {
+            try
+            {
+                Venta? ventaActualizado = repository.actualizarVenta(id, ventaAActualizar);
+                if (ventaActualizado != null)
+                {
+                    return Ok(ventaActualizado);
+                }
+                else
+                {
+                    return NotFound("La venta no fue encontrada");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
         }
     }
 }

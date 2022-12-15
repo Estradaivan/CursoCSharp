@@ -37,7 +37,7 @@ namespace GestionVentas.Controllers
                 }
                 else
                 {
-                    return NotFound("El producto no fue encontrado");
+                    return NotFound("El productoVendido no fue encontrado");
                 }
             }
             catch (Exception ex)
@@ -93,7 +93,7 @@ namespace GestionVentas.Controllers
                 }
                 else
                 {
-                    return NotFound("El producto no fue encontrado");
+                    return NotFound("El productoVendido no fue encontrado");
                 }
             }
             catch (Exception ex)

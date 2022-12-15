@@ -25,22 +25,81 @@ namespace GestionVentas.Controllers
             }
         }
 
-        [HttpPost]
-        public IActionResult Post()
+        [HttpGet("{id}")]
+        public ActionResult<Usuario> Get(long id)
         {
-            return Ok();
+            try
+            {
+                Usuario? usuario = repository.obtenerUsuario(id);
+                if (usuario != null)
+                {
+                    return Ok(usuario);
+                }
+                else
+                {
+                    return NotFound("El usuario no fue encontrado");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
         }
 
-        [HttpPut]
-        public IActionResult Put()
+        [HttpPost]
+        public ActionResult Post([FromBody] Usuario usuario)
         {
-            return Ok();
+            try
+            {
+                Usuario usuarioCreado = repository.crearUsuario(usuario);
+                return StatusCode(StatusCodes.Status201Created, usuarioCreado);
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
         }
 
         [HttpDelete]
-        public IActionResult Delete()
+        public ActionResult Delete([FromBody] int id)
         {
-            return Ok();
+            try
+            {
+                bool seElimino = repository.eliminarUsuario(id);
+                if (seElimino)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult<Usuario> Put(long id, [FromBody] Usuario usuarioAActualizar)
+        {
+            try
+            {
+                Usuario? usuarioActualizado = repository.actualizarUsuario(id, usuarioAActualizar);
+                if (usuarioActualizado != null)
+                {
+                    return Ok(usuarioActualizado);
+                }
+                else
+                {
+                    return NotFound("El usuario no fue encontrado");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
         }
     }
 }
